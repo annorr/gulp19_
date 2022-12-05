@@ -1,0 +1,153 @@
+$base-color:#f2f2f2;
+$secondary-color:#59331d;
+$primary-color:#d98555;
+
+:root {
+    --main-font: 'Lato' , sans-serif;
+  }
+  @mixin boxmodel($margin, $padding){
+  margin: $margin;
+  padding: $padding;
+  }
+
+body {
+  max-width: 576px;
+  background-color: #082B59;
+  @include boxmodel (0,0);
+  font-family: var(--main-font);
+  line-height: 2;
+  width: 576px;
+  border: 15px $base-color;
+  padding: $padding (50px);
+  margin: $margin (15px);
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  display: flex;
+}
+.a {
+&a {
+  max-width: 576px;
+  color: $secondary-color;
+}
+&a:hover {
+  text-decoration: none;
+}
+}
+header {
+  border-bottom: 10px solid $primary-color;
+}
+.nav {
+&nav ul {
+  min-width: 576px;
+ @include boxmodel (0,0);
+  list-style-type: none;
+  display: block;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+&nav li {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 1.3rem;
+}
+
+&nav .logo img {
+  max-width: 150px;
+}
+
+&nav .logo {
+  flex-basis: 100%;
+  text-align: center;
+}
+&nav a {
+  color:$base-color;
+  text-decoration: none;
+  display: block;
+}
+&nav a:hover {
+  color: #d98555;
+}
+}
+.main-bkgd {
+  background: #ffffff url(https://assets.codepen.io/6306176/gulp-bean-bkgd.jpg) repeat-x bottom;
+  padding-bottom: 300px;
+}
+
+@media (max-width: 576px) {
+.main {
+  max-width: 576px;
+  margin: $margin (0 auto);
+  padding: $padding (2rem);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+}
+article {
+  flex-basis: 73%;
+}
+.figure {
+&figure {
+  margin:$margin (3rem 0 0 0);
+  flex-basis: 25%;
+  background-color: $secondary-color;
+  border-radius: 10px;
+}
+&figure img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+}
+figcaption {
+  color: $base-color;
+  padding: 0.5rem;
+}
+.button {
+  display: inline-block;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  padding: $padding (0.5rem 1rem);
+  margin: $margin (0);
+  color: $base-color;
+  text-decoration: none;
+  border: 3px solid $secondary-color;
+}
+.button:hover {
+  background-color: $base-color;
+  color: $secondary-color;
+}
+.footer {
+&footer {
+  color: $base-color;
+  text-align: center;
+  border-top: 10px solid $primary-color;
+}
+&footer ul {
+  list-style-type: none;
+  @include boxmodel (0,0);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+&footer a {
+  color: $base-color;
+  font-size: 2rem;
+  display: block;
+  margin: $margin (0 1rem 3rem 1rem);
+}
+}
+div {
+  width: 576px;
+  border: 15px $base-color;
+  padding: $padding (50px);
+  margin: $margin(20px);
+}
